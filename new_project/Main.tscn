@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://he6hu6llo8qk"]
+
+[ext_resource type="Script" uid="uid://cypln2h1g22mu" path="res://scripts/Main.gd" id="1_cm0pq"]
+[ext_resource type="Script" uid="uid://bn6v4chk0r6yr" path="res://scripts/Platform.gd" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://c5f1nxhv6wxep" path="res://icon.svg" id="2_r0du0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(400, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_cm0pq")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(400, 500)
+script = ExtResource("1_glv2v")
+
+[node name="PlatformSprite" type="Sprite2D" parent="Platform"]
+position = Vector2(195, -6)
+scale = Vector2(3.13281, 0.164063)
+texture = ExtResource("2_r0du0")
+
+[node name="PlatformCollision" type="CollisionShape2D" parent="Platform"]
+position = Vector2(194, -6)
+shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 501.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 46
+text = "点击鼠标生成西瓜"
+horizontal_alignment = 1
+vertical_alignment = 1

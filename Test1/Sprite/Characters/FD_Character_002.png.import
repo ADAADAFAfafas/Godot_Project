@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgpbp7y17f336"
-path="res://.godot/imported/主角模板.png-269b54ff7f5049a3b0f192c26a42d053.ctex"
+uid="uid://da1iekaw2yhyw"
+path="res://.godot/imported/FD_Character_002.png-9a2b1748d8b25aad793735769dc099bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://主角模板.png"
-dest_files=["res://.godot/imported/主角模板.png-269b54ff7f5049a3b0f192c26a42d053.ctex"]
+source_file="res://Sprite/Characters/FD_Character_002.png"
+dest_files=["res://.godot/imported/FD_Character_002.png-9a2b1748d8b25aad793735769dc099bf.ctex"]
 
 [params]
 

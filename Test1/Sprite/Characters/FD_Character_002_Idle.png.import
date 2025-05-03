@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tx8o0f1r5fqc"
-path="res://.godot/imported/角色模板.png-a817a695a5ab327cc55d7588a69b9a97.ctex"
+uid="uid://b0u0ap5ik5v5t"
+path="res://.godot/imported/FD_Character_002_Idle.png-00d3b0547dec1e23e030b5f153619812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://角色模板.png"
-dest_files=["res://.godot/imported/角色模板.png-a817a695a5ab327cc55d7588a69b9a97.ctex"]
+source_file="res://Sprite/Characters/FD_Character_002_Idle.png"
+dest_files=["res://.godot/imported/FD_Character_002_Idle.png-00d3b0547dec1e23e030b5f153619812.ctex"]
 
 [params]
 

@@ -6,7 +6,8 @@ var moving = false
 var move_lastVector = 0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func _process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
 	input_dir = Vector2.ZERO
 	
 	if Input.is_action_pressed("ui_down"):

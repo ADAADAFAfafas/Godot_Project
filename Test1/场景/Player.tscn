@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://bllbsgyv0jxvr"]
 
-[ext_resource type="Script" uid="uid://cqr2b2m6gsi0n" path="res://脚本/Move_4.gd" id="1_theer"]
+[ext_resource type="Script" uid="uid://bnxbmagoug1lg" path="res://脚本/move.gd" id="1_theer"]
 [ext_resource type="Texture2D" uid="uid://d12xhmbecdy0c" path="res://Sprite/Characters/FD_Character_007_Idle.png" id="2_theer"]
 [ext_resource type="Texture2D" uid="uid://dujdj4d51j3f8" path="res://Sprite/Characters/FD_Character_007.png" id="3_5k4nn"]
 
@@ -284,12 +284,11 @@ script = ExtResource("1_theer")
 position = Vector2(4.82601, 45.826)
 scale = Vector2(1.18117, 1.18117)
 sprite_frames = SubResource("SpriteFrames_ibyws")
-animation = &"run_Up"
+animation = &"idle_Left"
 autoplay = "idle_Down"
-frame_progress = 0.209172
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(5, 52)
+position = Vector2(5, 51)
 shape = SubResource("RectangleShape2D_3fv14")
 
 [node name="MoveTimer" type="Timer" parent="CharacterBody2D"]

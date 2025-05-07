@@ -33,19 +33,19 @@ func _physics_process(delta: float) -> void:
 			change_wasd = 4 # 改变方向变量为4
 	else:
 		if change_wasd == 1:
-			animated_sprite.play("idle")  # 播放名为 "idle" 的静止动画
+			animated_sprite.play("idle_Down")#的静止动画
 			animated_sprite.frame = 0     # 直接覆盖当前帧
 			animated_sprite.pause()
 		if change_wasd == 2:
-			animated_sprite.play("idle")  # 播放名为 "idle" 的静止动画,等画好后加进去
+			animated_sprite.play("idle_Up")  # 播放名为 "idle" 的静止动画,等画好后加进去
 			animated_sprite.frame = 1     # 直接覆盖当前帧
 			animated_sprite.pause()
 		if change_wasd == 3:
-			animated_sprite.play("idle")  # 播放名为 "idle" 的静止动画,等画好后加进去
+			animated_sprite.play("idle_Right")  # 播放名为 "idle" 的静止动画,等画好后加进去
 			animated_sprite.frame = 2     # 直接覆盖当前帧
 			animated_sprite.pause()
 		if change_wasd == 4:
-			animated_sprite.play("idle")  # 播放名为 "idle" 的静止动画,等画好后加进去
+			animated_sprite.play("idle_Left")  # 播放名为 "idle" 的静止动画,等画好后加进去
 			animated_sprite.frame = 3     # 直接覆盖当前帧
 			animated_sprite.pause()
 	

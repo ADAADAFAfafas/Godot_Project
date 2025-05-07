@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0pdi4qu6a75f"]
+
+[ext_resource type="Script" uid="uid://ctibbjcx2usqh" path="res://scripts/TerrainGenerator.gd" id="1_3iduy"]
+
+[node name="Terrain" type="Node2D"]
+script = ExtResource("1_3iduy")
+
+[node name="TileMapLayer" type="TileMap" parent="."]
+format = 2

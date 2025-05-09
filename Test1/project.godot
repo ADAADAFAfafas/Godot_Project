@@ -11,17 +11,23 @@ config_version=5
 [application]
 
 config/name="四向移动"
-run/main_scene="uid://byw4eb0gycm88"
+run/main_scene="uid://cemffvgjwjtci"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=640
 window/stretch/mode="viewport"
 
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [input]
 

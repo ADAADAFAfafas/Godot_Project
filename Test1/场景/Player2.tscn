@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://kad43y8x4hvt"]
 
-[ext_resource type="Script" uid="uid://bg0d88wsdla5c" path="res://脚本/Move_8_Vector.gd" id="1_1wbqd"]
+[ext_resource type="Script" uid="uid://cqr2b2m6gsi0n" path="res://脚本/Move_4.gd" id="1_70ls5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_70ls5"]
 load_path = "res://.godot/imported/角色模板.png-a817a695a5ab327cc55d7588a69b9a97.ctex"
@@ -180,7 +180,7 @@ size = Vector2(66.5, 80)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(350, 275)
-script = ExtResource("1_1wbqd")
+script = ExtResource("1_70ls5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(2, -7)

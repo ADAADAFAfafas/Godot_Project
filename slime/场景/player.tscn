@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvk3yadmy0uv3"]
+
+[ext_resource type="Texture2D" uid="uid://dde6d48v03d36" path="res://Sprites/Slime.png" id="1_ovi5d"]
+[ext_resource type="Script" uid="uid://ddtr4ib2laj2" path="res://脚本/player.gd" id="1_s6iox"]
+
+[sub_resource type="Animation" id="Animation_ovi5d"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_eg43s"]
+resource_name = "Slime_run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usutn"]
+_data = {
+&"RESET": SubResource("Animation_ovi5d"),
+&"Slime_run": SubResource("Animation_eg43s")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_slsej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6iox"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_s6iox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_usutn")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendSpace2D_slsej")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = Vector2(-0.00105596, 0.78022)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.00002, -2.00001)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_ovi5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_s6iox")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(16, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-16, 0)
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 13)
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)

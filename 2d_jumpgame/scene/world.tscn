@@ -16,8 +16,12 @@ tile_map_data = PackedByteArray("AAAuAB0AAAABAAAAAAAvAB0AAAABAAAAAAAwAB0AAAABAAA
 tile_set = ExtResource("1_pjass")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 539)
-zoom = Vector2(1.5, 1.5)
+position = Vector2(911, 466)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." instance=ExtResource("2_txmk2")]
-position = Vector2(691, 451)
+position = Vector2(710, 378)
+
+[node name="Player2" parent="." instance=ExtResource("2_txmk2")]
+position = Vector2(915, 376)
+is_player_2 = true

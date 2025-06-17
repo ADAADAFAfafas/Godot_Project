@@ -1,10 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://c32yhj13jsian"]
+[gd_scene load_steps=19 format=3 uid="uid://c32yhj13jsian"]
 
 [ext_resource type="Script" uid="uid://cdndqdrtenq82" path="res://scripts/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://dyq4cv5bjpjcx" path="res://assets/sprite/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="1_xo3ru"]
 [ext_resource type="Texture2D" uid="uid://csodtgn0xbajs" path="res://assets/sprite/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Run.png" id="3_fvtld"]
 [ext_resource type="Texture2D" uid="uid://esju4j23w1b4" path="res://assets/sprite/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Jump.png" id="4_ct4mp"]
 [ext_resource type="Texture2D" uid="uid://bbmd054r7g607" path="res://assets/sprite/FreeKnight_v1/Colour1/Outline/120x80_PNGSheets/_Fall.png" id="5_s4jxa"]
+[ext_resource type="Script" uid="uid://cvtxspic740mj" path="res://scripts/fsm/final_state_machine.gd" id="6_hp4bs"]
+[ext_resource type="Script" uid="uid://f78wolkyq62t" path="res://scripts/fsm/idle_state.gd" id="7_hp4bs"]
+[ext_resource type="Script" uid="uid://bs67fgygpr7da" path="res://scripts/fsm/run_state.gd" id="8_g2vtq"]
+[ext_resource type="Script" uid="uid://dpy822t13put7" path="res://scripts/fsm/jump_state.gd" id="9_ihjo1"]
+[ext_resource type="Script" uid="uid://cwffmabyjalxr" path="res://scripts/fsm/fall_state.gd" id="10_dk1vr"]
+[ext_resource type="Script" uid="uid://b7jsec7itjjdy" path="res://scripts/fsm/double_jump_state.gd" id="11_ihjo1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
 radius = 7.0
@@ -243,3 +249,28 @@ libraries = {
 &"": SubResource("AnimationLibrary_hp4bs")
 }
 autoplay = "idle"
+
+[node name="FSM" type="Node" parent="." node_paths=PackedStringArray("init_state")]
+script = ExtResource("6_hp4bs")
+init_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://cvtxspic740mj"
+
+[node name="IdleState" type="Node" parent="FSM"]
+script = ExtResource("7_hp4bs")
+metadata/_custom_type_script = "uid://d1dpk36pngvbc"
+
+[node name="RunState" type="Node" parent="FSM"]
+script = ExtResource("8_g2vtq")
+metadata/_custom_type_script = "uid://d1dpk36pngvbc"
+
+[node name="JumpState" type="Node" parent="FSM"]
+script = ExtResource("9_ihjo1")
+metadata/_custom_type_script = "uid://d1dpk36pngvbc"
+
+[node name="FallState" type="Node" parent="FSM"]
+script = ExtResource("10_dk1vr")
+metadata/_custom_type_script = "uid://d1dpk36pngvbc"
+
+[node name="DoubleJumpState" type="Node" parent="FSM"]
+script = ExtResource("11_ihjo1")
+metadata/_custom_type_script = "uid://d1dpk36pngvbc"

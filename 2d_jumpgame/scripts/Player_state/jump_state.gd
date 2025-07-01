@@ -5,22 +5,22 @@ extends State
 
 ###方法
 func enter(): 
-	print("玩家进入待机状态")
-	animation_player.play("idle")
-	player.jump_count = 2
-
+	print("玩家进入跳跃状态")
+	animation_player.play("jump")
+	player.velocity.y = -player.jump_speed
+	player.is_jump = false
+	player.jump_count -= 1
+	
 func update(_delta : float): 
+	if player.is_on_wall_only():
+		switch_state.emit("WallSlideState")
 	if player.is_jump and player.jump_count > 0:
-		switch_state.emit("JumpState")
-	if player.direction != 0 and player.is_on_floor():
-		switch_state.emit("RunState")
+		switch_state.emit("DoubleJumpState")
 	if player.velocity.y > 0:
 		switch_state.emit("FallState")
-	if player.is_crouch:
-		switch_state.emit("CrouchState")
 
 func physice_update(_delta : float): 
-	pass
+	player.velocity.x = player.direction * player.speed
 	
 func exit(): 
-	pass
+	player.velocity.x = 0

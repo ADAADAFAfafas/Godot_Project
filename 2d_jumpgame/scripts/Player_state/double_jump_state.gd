@@ -5,21 +5,19 @@ extends State
 
 ###方法
 func enter(): 
-	print("玩家进入跳跃状态")
+	print("玩家进入二段跳状态")
 	animation_player.play("jump")
-	player.velocity.y = -player.jump_speed
-	player.is_jump = false
+	player.velocity.y = - player.jump_speed
 	player.jump_count -= 1
+
 func update(_delta : float): 
 	if player.is_on_wall_only():
 		switch_state.emit("WallSlideState")
-	if player.is_jump and player.jump_count > 0:
-		switch_state.emit("DoubleJumpState")
 	if player.velocity.y > 0:
 		switch_state.emit("FallState")
 
 func physice_update(_delta : float): 
-	player.velocity.x = player.direction * player.Speed
+	player.velocity.x = player.direction * player.speed
 	
 func exit(): 
 	player.velocity.x = 0

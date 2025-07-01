@@ -14,9 +14,11 @@ func update(_delta : float):
 		switch_state.emit("RunState")
 	if player.direction == 0:
 		switch_state.emit("CrouchState")
-
+	if player.is_roll:
+		switch_state.emit("RollState")
+	
 func physice_update(_delta : float): 
-	player.velocity.x = player.direction * (player.Speed / 2)
+	player.velocity.x = player.direction * (player.speed / 2)
 	
 func exit(): 
 	player.velocity.x = 0

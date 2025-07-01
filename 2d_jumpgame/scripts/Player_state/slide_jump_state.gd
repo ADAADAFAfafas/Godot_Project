@@ -15,18 +15,18 @@ func update(_delta : float):
 		switch_state.emit("WallSlideState")
 	#if player.is_jump and player.jump_count > 0:
 		#switch_state.emit("DoubleJumpState")
-	if player.velocity.y > 0:
+	if player.is_crouch or player.velocity.y > 0:
 		switch_state.emit("FallState")
 	
 
 func physice_update(_delta : float): 
 	pass
-	#player.velocity.x = playder.direction * player.Speed
+	#player.velocity.x = playder.direction * player.speed
 	
 func exit(): 
 	player.velocity.x = 0
 
 func slide_jump():
 	#player.last_direction = player.get_wall_normal().x
-	player.velocity = Vector2(-player.last_direction * player.Speed , -player.jump_speed)
+	player.velocity = Vector2(-player.last_direction * player.speed , -player.jump_speed)
 	player.direction = -player.last_direction

@@ -10,15 +10,14 @@ func enter():
 	animation_player.play("wall_slide")
 	player.velocity.y = 0
 	#player.direction = player.get_wall_normal().x
-
 func update(_delta : float): 
 	
 	if player.is_jump:
 		switch_state.emit("SlideJumpState")
-	if player.is_crouch:
+	if player.is_crouch and player.velocity.y > 0:
 		switch_state.emit("FallState")
-	#if player.is_on_floor():
-		#switch_state.emit("IdleState")
+	if player.is_on_floor_only():
+		switch_state.emit("IdleState")
 	#if player.last_direction == player.get_wall_normal().x:
 		#switch_state.emit("IdleState")
 func physice_update(_delta : float):

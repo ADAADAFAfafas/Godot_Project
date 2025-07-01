@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=4 uid="uid://bk4581iovbfgq"]
+[gd_scene load_steps=9 format=4 uid="uid://bk4581iovbfgq"]
 
 [ext_resource type="Texture2D" uid="uid://80dv2i2pmmot" path="res://assets/sprite/FreeCuteTilesetv1/FreeCuteTileset/BG1.png" id="1_0tg4p"]
 [ext_resource type="TileSet" uid="uid://b6bcw4cqdfx4l" path="res://recourse/world_Tile.tres" id="1_pjass"]
 [ext_resource type="Texture2D" uid="uid://bjeibpevdcuyy" path="res://assets/sprite/FreeCuteTilesetv1/FreeCuteTileset/BG2.png" id="2_hcb8y"]
 [ext_resource type="PackedScene" uid="uid://c32yhj13jsian" path="res://scene/player.tscn" id="2_txmk2"]
-[ext_resource type="Script" uid="uid://cg32rbypqclvs" path="res://scripts/camera.gd" id="2_w4qq1"]
+[ext_resource type="Script" uid="uid://cg32rbypqclvs" path="res://scripts/Other/camera.gd" id="2_w4qq1"]
 [ext_resource type="Texture2D" uid="uid://dosp2mkk66plu" path="res://assets/sprite/FreeCuteTilesetv1/FreeCuteTileset/BG3.png" id="3_y3jn2"]
+[ext_resource type="PackedScene" uid="uid://bsqwk5m8b36wk" path="res://scene/enemy.tscn" id="7_hcb8y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hcb8y"]
+resource_local_to_scene = true
+radius = 7.0
+height = 36.0
 
 [node name="World" type="Node2D"]
 
@@ -58,9 +64,18 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 script = ExtResource("2_w4qq1")
 
+[node name="Enemy" parent="." instance=ExtResource("7_hcb8y")]
+position = Vector2(1053, 462)
+
 [node name="Player" parent="." instance=ExtResource("2_txmk2")]
-position = Vector2(601, 442)
+position = Vector2(636, 427)
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+shape = SubResource("CapsuleShape2D_hcb8y")
 
 [node name="Player2" parent="." instance=ExtResource("2_txmk2")]
-position = Vector2(1361, 470)
+position = Vector2(756, 471)
 is_player_2 = true
+
+[editable path="Player"]
+[editable path="Player2"]

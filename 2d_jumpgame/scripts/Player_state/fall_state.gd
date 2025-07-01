@@ -3,20 +3,20 @@ extends State
 @onready var player: Player = $"../.."
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
-
 ###方法
 func enter(): 
-	print("玩家进入下蹲状态")
-	animation_player.play("crouch")
+	print("玩家进入下落状态")
+	animation_player.play("fall")
 
 func update(_delta : float): 
-	if not player.is_crouch and player.is_on_floor_only():
+	if player.is_on_wall_only():
+		switch_state.emit("WallSlideState")
+	if player.is_on_floor():
 		switch_state.emit("IdleState")
-	if player.direction != 0:
-		switch_state.emit("CrouchWalkState")
-
+	if player.is_jump and player.jump_count > 0:
+		switch_state.emit("DoubleJumpState")
 func physice_update(_delta : float): 
-	pass
+	player.velocity.x = player.direction * player.speed
 	
 func exit(): 
 	player.velocity.x = 0
